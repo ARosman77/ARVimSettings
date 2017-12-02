@@ -4,3 +4,6 @@
 [submodule "/home/alesr/.vim/bundle/nerdtree"]
 	path = /home/alesr/.vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
