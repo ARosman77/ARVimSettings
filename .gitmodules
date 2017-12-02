@@ -1,3 +1,6 @@
 [submodule "bundle/powerline"]
 	path = bundle/powerline
 	url = git@github.com:powerline/powerline.git
+[submodule "/home/alesr/.vim/bundle/nerdtree"]
+	path = /home/alesr/.vim/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
