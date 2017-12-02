@@ -1,2 +1,0 @@
-# ARVimSettings
-My Vim settings
