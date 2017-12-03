@@ -1,6 +1,17 @@
 "Enable plugin support
 execute pathogen#infect()
 
+"Set <Space> as leader
+let mapleader=" "
+
+"LightLine required settings
+set laststatus=2
+"LightLine other settings
+let g:lightline = { 'colorscheme' : 'wombat', }
+
+"NERDCommenter required setting
+filetype plugin on
+
 "NERDTree settings
 "Open tree if no files opened at start
 autocmd StdinReadPre * let s:std_in=1
@@ -11,19 +22,26 @@ autocmd bufenter *
   \ | q | endif
 "Close tree after opening file
 let NERDTreeQuitOnOpen=1
+"Open a node with right arrow
+let NERDTreeMapActivateNode='<right>'
+"Display hidden files
+let NERDTreeShowHidden=1
+"Ignore useless files
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 "Map keys to tree commands
-map <C-n> :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 
 "General settings
 set nocompatible
 set backup
-set history=50
+set history=100
 set ruler
 set showcmd
 set incsearch
 filetype on
 syntax on
 set hidden
+
 
 "Choose theme
 colorscheme Tomorrow-Night
@@ -34,8 +52,6 @@ set colorcolumn=80
 "Numbered lines
 set number
 
-"let mapleader=" "
-"map <leader>s :source ~/.vimrc<CR>
 
 filetype indent on
 set nowrap
@@ -49,8 +65,13 @@ set hlsearch
 "Show matching ()
 set showmatch
 
+"Hide mode as lightline is doing this (doesn't work if to far up)
+set noshowmode
+
 "Key mappings
 map <C-e> :wq<CR>
 map <C-s> :w<CR>
-map \s i[<Esc>ea]<Esc>
+map <leader>q :q<CR>
 
+"Work on this for python lists
+"map <leader>l i[<Esc>ea]<Esc>
