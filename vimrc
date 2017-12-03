@@ -1,16 +1,41 @@
+"Enable plugin support
 execute pathogen#infect()
+
+"NERDTree settings
+"Open tree if no files opened at start
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"Close Vim if only tree is left opened
+autocmd bufenter * 
+  \ if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree())
+  \ | q | endif
+"Close tree after opening file
+let NERDTreeQuitOnOpen=1
+"Map keys to tree commands
+map <C-n> :NERDTreeToggle<CR>
+
+"General settings
+set nocompatible
+set backup
+set history=50
+set ruler
+set showcmd
+set incsearch
 filetype on
 syntax on
+set hidden
+
+"Choose theme
 colorscheme Tomorrow-Night
 
-set colorcolumn=90
+"Warn about long lines
+set colorcolumn=80
+
+"Numbered lines
 set number
 
 "let mapleader=" "
 "map <leader>s :source ~/.vimrc<CR>
-
-set hidden
-set history=50
 
 filetype indent on
 set nowrap
@@ -19,13 +44,13 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
+"Highlight searches
 set hlsearch
-"nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-
-"map <D-A-RIGHT> <C-w>l
-"map <D-A-LEFT> <C-w>h
-"map <D-A-DOWN> <C-w><C-w>
-"map <D-A-UP> <C-w>W
-
+"Show matching ()
 set showmatch
+
+"Key mappings
+map <C-e> :wq<CR>
+map <C-s> :w<CR>
+map \s i[<Esc>ea]<Esc>
 
