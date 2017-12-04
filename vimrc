@@ -70,18 +70,19 @@ set showmatch
 
 "Python PEP8 indentation
 au BufNewFile,BufRead *.py
-  \ set tabstop=4
-  \ set softtabstop=4
-  \ set shiftwidth=4
-  \ set textwidth=79
-  \ set expandtab
-  \ set autoindent
+  \ set tabstop=4 |
+  \ set softtabstop=4 |
+  \ set shiftwidth=4 |
+  \ set textwidth=79 |
+  \ set expandtab |
+  \ set autoindent |
   \ set fileformat=unix
 
 "Hide mode as lightline is doing this (doesn't work if to far up)
 set noshowmode
 
 "Flag Whitespaces
+highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "Enable folding
