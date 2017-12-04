@@ -55,7 +55,7 @@ set colorcolumn=80
 "Numbered lines
 set number
 
-
+"General indentation
 filetype indent on
 set nowrap
 set tabstop=2
@@ -68,8 +68,31 @@ set hlsearch
 "Show matching ()
 set showmatch
 
+"Python PEP8 indentation
+au BufNewFile,BufRead *.py
+  \ set tabstop=4
+  \ set softtabstop=4
+  \ set shiftwidth=4
+  \ set textwidth=79
+  \ set expandtab
+  \ set autoindent
+  \ set fileformat=unix
+
 "Hide mode as lightline is doing this (doesn't work if to far up)
 set noshowmode
+
+"Flag Whitespaces
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+"Enable folding
+"set foldmethod=indent
+"set foldlevel=99
+"Folding with SimpylFold
+let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_fold_docstring=0
+let g:SimpylFold_fold_import=1
+"Key mapping for folding
+nnoremap <leader><leader> za
 
 "Key mappings
 map <C-e> :wq<CR>
