@@ -4,10 +4,13 @@ execute pathogen#infect()
 "Set <Space> as leader
 let mapleader=" "
 
+"GitGutter settings
+
+
 "LightLine required settings
 set laststatus=2
 "LightLine other settings
-let g:lightline = { 'colorscheme' : 'wombat', }
+let g:lightline = { 'colorscheme' : 'Dracula', }
 
 "NERDCommenter required setting
 filetype plugin on
@@ -42,9 +45,9 @@ filetype on
 syntax on
 set hidden
 
-
 "Choose theme
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
+color dracula
 
 "Warn about long lines
 set colorcolumn=80
