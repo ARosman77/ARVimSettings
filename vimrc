@@ -11,6 +11,12 @@ let mapleader=" "
 set laststatus=2
 "LightLine other settings
 let g:lightline = { 'colorscheme' : 'Dracula', }
+let g:lightline.active = {
+  \ 'left' :  [
+  \             ['mode','paste'],
+  \             ['gitbranch','readonly','filename','modified']
+  \           ]}
+let g:lightline.component_function =  { 'gitbranch' : 'fugitive#statusline' }
 
 "NERDCommenter required setting
 filetype plugin on
@@ -99,6 +105,9 @@ nnoremap <leader><leader> za
 map <C-e> :wq<CR>
 map <C-s> :w<CR>
 map <leader>q :q<CR>
+"Fugitive mappings
+map <leader>gs :Gstatus<CR>
+map <leader>gc :Gcommit<CR>
 
 "Work on this for python lists
 "map <leader>l i[<Esc>ea]<Esc>
