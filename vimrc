@@ -36,7 +36,7 @@ let NERDTreeMapActivateNode='<right>'
 "Display hidden files
 let NERDTreeShowHidden=1
 "Ignore useless files
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.pyc']
 "Map keys to tree commands
 nmap <leader>n :NERDTreeToggle<CR>
 
@@ -109,5 +109,8 @@ map <leader>q :q<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>gc :Gcommit<CR>
 
+"Python key mappings
+map <leader>r :w<CR>:! ./%<CR>
+map <leader>p :w<CR>:! python %<CR>
 "Work on this for python lists
 "map <leader>l i[<Esc>ea]<Esc>
