@@ -125,3 +125,5 @@ inoremap <C-q> ""<Left>
 "Window manipulation
 nnoremap <C-Down> <C-w><Down>
 nnoremap <C-Up> <C-w><Up>
+nnoremap <leader><Up> <C-w>5+
+nnoremap <leader><Down> <C-w>5-
