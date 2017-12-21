@@ -25,6 +25,7 @@ filetype plugin on
 "Open tree if no files opened at start
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | ene | endif
 "Close Vim if only tree is left opened
 autocmd bufenter * 
   \ if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree())
@@ -38,7 +39,7 @@ let NERDTreeShowHidden=1
 "Ignore useless files
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.pyc']
 "Map keys to tree commands
-nmap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 "General settings
 set nocompatible
@@ -102,15 +103,25 @@ let g:SimpylFold_fold_import=1
 nnoremap <leader><leader> za
 
 "Key mappings
-map <C-e> :wq<CR>
-map <C-s> :w<CR>
-map <leader>q :q<CR>
+nnoremap <C-e> :wq<CR>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <esc>:w<CR>a
+nnoremap <leader>q :q<CR>
 "Fugitive mappings
-map <leader>gs :Gstatus<CR>
-map <leader>gc :Gcommit<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
 
 "Python key mappings
-map <leader>r :w<CR>:! ./%<CR>
-map <leader>p :w<CR>:! python %<CR>
+nnoremap <leader>r :w<CR>:! ./%<CR>
+nnoremap <leader>p :w<CR>:! python %<CR>
+inoremap <C-k> ()<Left>
+inoremap <C-o> []<Left>
+inoremap <C-b> {}<Left>
+inoremap <C-x> ''<Left>
+inoremap <C-q> ""<Left>
 "Work on this for python lists
 "map <leader>l i[<Esc>ea]<Esc>
+
+"Window manipulation
+nnoremap <C-Down> <C-w><Down>
+nnoremap <C-Up> <C-w><Up>
