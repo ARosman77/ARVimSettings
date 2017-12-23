@@ -108,10 +108,12 @@ inoremap <C-e> <esc>:wq<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <esc>:w<CR>a
 nnoremap <leader>q :q<CR>
+nnoremap <silent> <leader>d :nohlsearch<Bar>:echo<CR>
 "Fugitive mappings
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 "nnoremap <leader>gp :!git push origin fugitive#head()
+nnoremap <leader>s :source ~/.vimrc<CR>
 
 "Python key mappings
 nnoremap <leader>r :w<CR>:! ./%<CR>
@@ -121,8 +123,7 @@ inoremap <C-o> []<Left>
 inoremap <C-b> {}<Left>
 inoremap <C-x> ''<Left>
 inoremap <C-q> ""<Left>
-"Work on this for python lists
-"map <leader>l i[<Esc>ea]<Esc>
+inoremap <F2> #!/usr/bin/env python
 
 "Window manipulation
 nnoremap <C-Down> <C-w><Down>
