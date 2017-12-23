@@ -16,7 +16,7 @@ let g:lightline.active = {
   \             ['mode','paste'],
   \             ['gitbranch','readonly','filename','modified']
   \           ]}
-let g:lightline.component_function =  { 'gitbranch' : 'fugitive#statusline' }
+let g:lightline.component_function =  { 'gitbranch' : 'fugitive#head' }
 
 "NERDCommenter required setting
 filetype plugin on
@@ -104,12 +104,14 @@ nnoremap <leader><leader> za
 
 "Key mappings
 nnoremap <C-e> :wq<CR>
+inoremap <C-e> :wq<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <esc>:w<CR>a
 nnoremap <leader>q :q<CR>
 "Fugitive mappings
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
+"nnoremap <leader>gp :!git push origin fugitive#head()
 
 "Python key mappings
 nnoremap <leader>r :w<CR>:! ./%<CR>
