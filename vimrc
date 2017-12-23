@@ -104,7 +104,7 @@ nnoremap <leader><leader> za
 
 "Key mappings
 nnoremap <C-e> :wq<CR>
-inoremap <C-e> :wq<CR>
+inoremap <C-e> <esc>:wq<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <esc>:w<CR>a
 nnoremap <leader>q :q<CR>
