@@ -113,6 +113,8 @@ nnoremap <silent> <leader>d :nohlsearch<Bar>:echo<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gd :Gdiff<CR>
+xnoremap do :diffget<CR><Bar>:diffupdate<CR>
+xnoremap dp :diffput<CR><Bar>:diffupdate<CR>
 "nnoremap <leader>gp :!git push origin fugitive#head()
 nnoremap <leader>s :source ~/.vimrc<CR>
 
